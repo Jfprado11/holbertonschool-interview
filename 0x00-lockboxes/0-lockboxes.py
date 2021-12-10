@@ -4,12 +4,19 @@
 
 def canUnlockAll(boxes):
     """Funtion to wheter the boxes can be openede or not"""
-    list_of_keys = [0]
+    list_of_keys = boxes[0].copy()
+    true_keys = [0]
     len_box = len(boxes) - 1
-    for key in boxes:
-        for item in key:
-            if item <= len_box and item not in list_of_keys:
-                list_of_keys.append(item)
 
-    print(list_of_keys)
-    return len(list_of_keys) == len(boxes)
+    for idx, key in enumerate(list_of_keys):
+        if key > len_box:
+            continue
+        else:
+            for x in boxes[key]:
+                if x not in list_of_keys:
+                    if x <= len_box:
+                        list_of_keys.append(x)
+            if key not in true_keys:
+                true_keys.append(key)
+
+    return len(true_keys) == len(boxes)
