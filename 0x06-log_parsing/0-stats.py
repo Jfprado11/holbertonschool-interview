@@ -4,18 +4,9 @@
 import sys
 import signal
 
-
-def handler(signal, frame):
-    status_items = all_status.items()
-    print("File size: {:d}".format(all_file_size))
-    for item in sorted(status_items):
-        print("{}: {}".format(item[0], item[1]))
-
-
 count = 0
 all_file_size = 0
 all_status = {}
-
 
 for line in sys.stdin:
     # breaking up the input to check format
@@ -41,7 +32,6 @@ for line in sys.stdin:
                 all_status[status] = 1
 
         count += 1
-        signal.signal(signal.SIGINT, handler)
         if (count == 10):
             print("File size: {:d}".format(all_file_size))
             status_items = all_status.items()
