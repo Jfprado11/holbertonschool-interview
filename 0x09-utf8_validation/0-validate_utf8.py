@@ -8,18 +8,22 @@ def validUTF8(data):
     """
     count = 0
     for num in data:
+        bin_rep = format(num, '#010b')[-8:]
+
         if count == 0:
-            if (num >> 5) == 0b110:
-                count = 1
-            elif (num >> 4) == 0b1110:
-                count = 2
-            elif (num >> 3) == 0b11110:
-                count = 3
-            elif (num >> 7):
+            for bit in bin_rep:
+                if bit == '0':
+                    break
+                count += 1
+
+            if count == 0:
+                continue
+
+            if count == 1 or count > 4:
                 return False
 
         else:
-            if (num >> 6) != 0b10:
+            if not (bin_rep[0] == '1' and bin_rep[1] == '0'):
                 return False
-            count -= 1
+        count -= 1
     return count == 0
