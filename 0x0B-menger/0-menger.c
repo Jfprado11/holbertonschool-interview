@@ -9,7 +9,7 @@ void menger(int level)
 {
 	int num, row, col, drow, dcol, f;
 
-	num = to_square(level);
+	num = (int)pow(3, level);
 
 	for (col = 0; col < num; col++)
 	{
@@ -29,28 +29,11 @@ void menger(int level)
 				drow = drow / 3;
 				dcol = dcol / 3;
 			}
-			if(!f)
+			if (!f)
 			{
 				printf("#");
 			}
 		}
 		printf("\n");
 	}
-}
-
-
-/**
- * to_square - get the number for a square num by 3
- * @num: the num where how times is going to multiply
- * Return: the obj to the merge sponge
- */
-int to_square(int num)
-{
-	int x = 1, i;
-
-	for (i = 0; i < num; i++)
-	{
-		x = x * 3;
-	}
-	return (x);
 }
