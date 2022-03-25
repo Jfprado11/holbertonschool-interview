@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+
 /**
  * sorted_array_to_avl - a sorted array into a tree avl
  * @array: the array to convert into the tree
@@ -20,6 +21,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  * @arr: the array to convert into the tree
  * @end: the size of the array
  * @start: the start of the array
+ * @previos_node: the parent of the node
  *
  * Return: a tree avl
  */
@@ -36,9 +38,8 @@ avl_t *helper(int *arr, size_t start, size_t end, avl_t *previos_node)
 	mid = start + (end - start) / 2;
 	root = new_node(arr[mid], previos_node);
 	if (root == NULL)
-		return NULL;
+		return (NULL);
 
-	// printf("%ld %ld\n", start, end);
 	root->left = helper(arr, start, mid - 1, root);
 	root->right = helper(arr, mid + 1, end, root);
 
@@ -52,7 +53,7 @@ avl_t *helper(int *arr, size_t start, size_t end, avl_t *previos_node)
  * @previos_node: the parent of the node
  * Return: the node
  */
-avl_t* new_node(int data, avl_t *previos_node)
+avl_t *new_node(int data, avl_t *previos_node)
 {
 	avl_t *node = NULL;
 
