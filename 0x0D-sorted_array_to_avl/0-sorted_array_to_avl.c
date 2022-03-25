@@ -25,12 +25,12 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  *
  * Return: a tree avl
  */
-avl_t *helper(int *arr, size_t start, size_t end, avl_t *previos_node)
+avl_t *helper(int *arr, int start, int end, avl_t *previos_node)
 {
 	size_t mid = 0;
 	avl_t *root = NULL;
 
-	if (start >= end)
+	if (start > end)
 	{
 		return (NULL);
 	}
@@ -41,6 +41,7 @@ avl_t *helper(int *arr, size_t start, size_t end, avl_t *previos_node)
 		return (NULL);
 
 	root->left = helper(arr, start, mid - 1, root);
+
 	root->right = helper(arr, mid + 1, end, root);
 
 	return (root);
@@ -65,6 +66,7 @@ avl_t *new_node(int data, avl_t *previos_node)
 	node->right = NULL;
 	node->left = NULL;
 	node->parent = previos_node;
+
 
 	return (node);
 }
