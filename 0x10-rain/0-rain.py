@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
-
-from turtle import right
+""" module to resolve the challenge of the rain
+"""
 
 
 def rain(walls):
