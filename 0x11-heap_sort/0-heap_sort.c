@@ -1,7 +1,5 @@
 #include "sort.h"
 
-void siftdown(int array[], int root, int last);
-void build_heap_max(int array[], int end);
 void heapify(int arr[], int n, int i, int size);
 void swap(int *a, int *b);
 
