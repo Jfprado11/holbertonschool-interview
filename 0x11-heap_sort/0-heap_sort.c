@@ -1,7 +1,6 @@
 #include "sort.h"
 
 void heapify(int arr[], int n, int i, int size);
-void swap(int *a, int *b);
 
 /**
  * heap_sort - obtain the heap sort of a array
@@ -17,8 +16,7 @@ void heap_sort(int *array, size_t size)
 		heapify(array, size, i, size);
 	for (i = size - 1; i >= 0; i--)
 	{
-		swap(&array[0], &array[i]);
-		print_array(array, size);
+		swap(&array[0], &array[i], array, size);
 		heapify(array, i, 0, size);
 	}
 }
@@ -28,12 +26,14 @@ void heap_sort(int *array, size_t size)
  * @a: integer to do swap
  * @b: to do the swap
  */
-void swap(int *a, int *b)
+void swap(int *a, int *b, int arr[], int size)
 {
 	int temp = *a;
 
+	print_array(arr, size);
 	*a = *b;
 	*b = temp;
+
 }
 
 /**
@@ -57,8 +57,7 @@ void heapify(int arr[], int n, int i, int size)
 
 	if (largest != i)
 	{
-	swap(&arr[i], &arr[largest]);
-	print_array(arr, size);
+	swap(&arr[i], &arr[largest], arr, size);
 	heapify(arr, n, largest, size);
 	}
 }
