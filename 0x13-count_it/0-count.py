@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """moduel to resolve problem of the api
 """
-from tkinter import E
 import requests
 
 
@@ -25,7 +24,8 @@ def count_words(subreddit, word_list, idx=0, data_send={}, after="", keys=""):
                     else:
                         data_send[looking_word] = 1
                     print(data_send)
-                return count_words(subreddit, word_list, idx + 1, data_send, after)
+                return count_words(subreddit, word_list,
+                                   idx + 1, data_send, after)
             else:
                 after = data["data"]["after"]
                 return count_words(subreddit, word_list, 0, data_send, after)
@@ -38,5 +38,6 @@ def count_words(subreddit, word_list, idx=0, data_send={}, after="", keys=""):
             else:
                 keys = None
             if keys is not None:
-                return count_words(subreddit, word_list, 0, data_send, None, keys)
+                return count_words(subreddit, word_list, 0,
+                                   data_send, None, keys)
             return
