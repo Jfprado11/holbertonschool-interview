@@ -1,7 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
-#include <stdio.h>
-
 /**
  * main- the main function
  *@argc: varible counts
@@ -24,7 +21,7 @@ int main(int argc, char *argv[])
 		printError();
 		exit(98);
 	}
-	printf("%s \n" , argv[1]);
+	putchar(argv[1][0]);
 }
 
 /**
