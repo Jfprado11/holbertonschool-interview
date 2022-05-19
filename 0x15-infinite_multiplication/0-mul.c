@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	_putchar(argv[1][0]);
+	return (0);
 }
 
 /**
@@ -81,4 +82,3 @@ int _strlen(char *s)
 	}
 	return (lon);
 }
-
