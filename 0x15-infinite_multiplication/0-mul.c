@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, check_a, check_b;
+	int check_a, check_b;
 
 	if (argc != 3)
 	{
@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
 		printError();
 		exit(98);
 	}
-	a = atoi(argv[1]) * atoi(argv[2]);
-	printf("%d \n", a);
+	printf("%s \n" , argv[1]);
 }
 
 /**

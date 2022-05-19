@@ -31,8 +31,8 @@ void swap(int *a, int *b, int arr[], int size)
 	int temp = *a;
 
 	*a = *b;
-	print_array(arr, size);
 	*b = temp;
+	print_array(arr, size);
 
 }
 
