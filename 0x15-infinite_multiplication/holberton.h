@@ -2,6 +2,7 @@
 #define _MULTIPLICATION_H_
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 void printError(void);

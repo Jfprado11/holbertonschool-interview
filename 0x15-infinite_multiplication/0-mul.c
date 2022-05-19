@@ -1,4 +1,4 @@
-#include "multiplication.h"
+#include "holberton.h"
 /**
  * main- the main function
  *@argc: varible counts
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		printError();
 		exit(98);
 	}
-	_putchar(argv[1][0]);
+	printf("%s", argv[1][0]);
 	return (0);
 }
 
