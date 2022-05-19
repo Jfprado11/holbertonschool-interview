@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 /**
  * main- the main function
  *@argc: varible counts
