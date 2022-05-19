@@ -38,9 +38,9 @@ void printError(void)
 
 	for (; i <= 4; i++)
 	{
-		_putchar(error[i]);
+		putchar(error[i]);
 	}
-	_putchar('\n');
+	putchar('\n');
 
 }
 
