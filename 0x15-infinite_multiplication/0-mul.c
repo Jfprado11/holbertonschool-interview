@@ -40,7 +40,12 @@ void printError(void)
 	_putchar('\n');
 
 }
-
+/**
+ * checkDigit- check the digits
+ * @strI: the string to compare
+ *
+ * Return: the diigt 1 true or 0 fasle
+ */
 int checkDigit(char *strI)
 {
 	int i;
