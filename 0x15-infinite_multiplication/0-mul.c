@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		printError();
 		exit(98);
 	}
-	putchar(argv[1][0]);
+	_putchar(argv[1][0]);
 }
 
 /**
@@ -35,9 +35,9 @@ void printError(void)
 
 	for (; i <= 4; i++)
 	{
-		putchar(error[i]);
+		_putchar(error[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 
 }
 
