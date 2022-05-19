@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		printError();
 		exit(98);
 	}
-	printf("%s", argv[1][0]);
+	printf("%d", argv[1][0]);
 	return (0);
 }
 
