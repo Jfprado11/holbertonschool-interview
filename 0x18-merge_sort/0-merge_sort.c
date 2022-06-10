@@ -43,43 +43,31 @@ void merge_sort_res(int *array, int left, int right)
  */
 void merge(int *array, int left, int middle, int right)
 {
-	int i, j, k, n1 = middle - left + 1, n2 = right - middle;
-	int left_tmp[n1];
-	int right_tmp[n2];
+	int i = left, j = middle + 1, k = 0;
+	int *temp;
 
-	for (i = 0; i < n1; i++)
-		left_tmp[i] = array[left + i];
-	for (j = 0; j < n2; j++)
-		right_tmp[j] = array[middle + 1 + j];
+	temp = (int*)malloc(right - (left + 1));
 
-	i = 0;
-	j = 0;
-	k = left;
-	while (i < n1 && j < n2)
-	{
-		if (left_tmp[i] <= right_tmp[j])
-		{
-			array[k] = left_tmp[i];
-			i++;
+	while(i <= middle && j <= right) {
+		if(array[i] <= array[j]) {
+			temp[k] = array[i];
+			k += 1; i += 1;
 		}
-		else
-		{
-			array[k] = right_tmp[j];
-			j++;
+		else {
+			temp[k] = array[j];
+			k += 1; j += 1;
 		}
-		k++;
 	}
-
-	while (i < n1)
-	{
-		array[k] = left_tmp[i];
-		i++;
-		k++;
+	while(i <= middle) {
+		temp[k] = array[i];
+		k += 1; i += 1;
 	}
-	while (j < n2)
-	{
-		array[k] = right_tmp[j];
-		j++;
-		k++;
+	while(j <= right) {
+		temp[k] = array[j];
+		k += 1; j += 1;
 	}
+	for(i = left; i <= right; i += 1) {
+		array[i] = temp[i - left];
+	}
+	free(temp);
 }
