@@ -46,27 +46,37 @@ void merge(int *array, int left, int middle, int right)
 	int i = left, j = middle + 1, k = 0;
 	int *temp;
 
-	temp = (int*)malloc(right - (left + 1));
+	temp = (int *)malloc(right - (left + 1));
 
-	while(i <= middle && j <= right) {
-		if(array[i] <= array[j]) {
+	while (i <= middle && j <= right)
+	{
+		if (array[i] <= array[j])
+		{
 			temp[k] = array[i];
-			k += 1; i += 1;
+			k += 1;
+			i += 1;
 		}
-		else {
+		else
+		{
 			temp[k] = array[j];
-			k += 1; j += 1;
+			k += 1;
+			j += 1;
 		}
 	}
-	while(i <= middle) {
+	while (i <= middle)
+	{
 		temp[k] = array[i];
-		k += 1; i += 1;
+		k += 1;
+		i += 1;
 	}
-	while(j <= right) {
+	while (j <= right)
+	{
 		temp[k] = array[j];
-		k += 1; j += 1;
+		k += 1;
+		j += 1;
 	}
-	for(i = left; i <= right; i += 1) {
+	for (i = left; i <= right; i += 1)
+	{
 		array[i] = temp[i - left];
 	}
 	free(temp);
