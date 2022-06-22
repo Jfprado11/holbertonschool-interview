@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Program to solve a challenge of the making change of coins
 """
@@ -18,7 +19,8 @@ def makeChange(coins, total):
         for j in range(len(coins)):
             if coins[j] <= i:
                 current_count = res[i - coins[j]]
-                if (current_count != sys.maxsize) and (current_count + 1 < res[i]):
+                if ((current_count != sys.maxsize)
+                        and (current_count + 1 < res[i])):
                     res[i] = current_count + 1
     if res[total] == sys.maxsize:
         return - 1
