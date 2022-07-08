@@ -28,14 +28,14 @@ void radix_sort(int *array, size_t size)
 
 int getMax(int arr[], int n)
 {
-    int mx = arr[0];
+	int mx = arr[0];
 
-    for (int i = 1; i < n; i++)
+	for (int i = 1; i < n; i++)
 	{
-        if (arr[i] > mx)
-            mx = arr[i];
+		if (arr[i] > mx)
+			mx = arr[i];
 	}
-    return mx;
+	return (mx);
 }
 
 
