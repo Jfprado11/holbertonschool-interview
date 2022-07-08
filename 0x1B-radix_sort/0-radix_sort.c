@@ -9,6 +9,9 @@ void radix_sort(int *array, size_t size)
 {
 	int max = 0, exp;
 
+	if (size == 1 || array == NULL)
+		return;
+
 	max = getMax(array, size);
 
 	for (exp = 1; max / exp > 0; exp *= 10)
