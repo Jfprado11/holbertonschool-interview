@@ -10,10 +10,10 @@ def isWinner(x, nums):
     if (x < 1):
         return None
 
-    values = [0, 0, 1, 1, 2, 2, 3, 3, 4]
+    # values = [0, 0, 1, 1, 2, 2, 3, 3, 4]
     number = 0
 
-    for num in nums:
-        number ^= values[num % len(values)]
+    for num in range(0, x):
+        number ^= nums[num % len(nums)]
 
-    return 'Maria' if number > 0 else 'Ben'
+    return 'Ben' if number > 0 else 'Maria'
