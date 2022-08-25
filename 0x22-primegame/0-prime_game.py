@@ -10,12 +10,9 @@ def isWinner(x, nums):
     if (x < 1):
         return None
 
-    if (x == 1):
-        return 'Maria' if nums[0] % 2 == 0 else 'Ben'
-
     number = 0
 
     for num in range(x):
         number ^= nums[num % len(nums)]
 
-    return 'Ben' if number > 0 else 'Maria'
+    return 'Ben' if number >= 0 else 'Maria'
