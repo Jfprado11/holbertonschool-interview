@@ -11,7 +11,7 @@ def isWinner(x, nums):
         return None
 
     if (x == 1):
-        return 'Maria'
+        return 'Ben' if nums[0] % 2 == 0 else 'Maria'
 
     number = 0
 
