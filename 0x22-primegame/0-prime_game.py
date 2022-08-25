@@ -10,6 +10,9 @@ def isWinner(x, nums):
     if (x < 1):
         return None
 
+    if (x == 1):
+        return 'Maria'
+
     number = 0
 
     for num in range(x):
